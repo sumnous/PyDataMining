@@ -10,10 +10,8 @@ class Recommendation(object):
     def __init__(self,user_rating = {},neighbor = 3,recommendation = 3):
         self.n = neighbor #num
         self.r = recommendation #num
-
         self.cal_type = "manhattan"  # M/O
         self.pearson_type = "formula" #formula/normal/cosine
-
         self.users = user_rating
 
     def get_all_users(self):
@@ -41,15 +39,40 @@ class Recommendation(object):
             return distance
 
     def get_neighbor_recommendation_list(self,user,neighbors=[]):
-        rec_list = []
-#        TODO
-#        prefer user or high score?
-#        item_neighbor_count = {}
+    #        TODO
+    #        prefer user or high score?
+    #        item_neighbor_count = {}
+
+        rec_dict = {}
         for x in neighbors:
             for item in self.users[x]:
                 if not self.users[user].has_key(item):
-#                    TODO important!!! maybe duplicate
-                    rec_list.append((item,self.users[x][item]))
+                    if rec_dict.has_key(item):
+                        rec_dict[item][x] = self.users[x][item]
+                    else:
+                        tmp = {}
+                        tmp[x] = self.users[x][item]
+                        rec_dict[item] = tmp
+
+        rec_list = []
+        for x in rec_dict:
+            pearson_total = 0
+            tmp_users = []
+            for k in rec_dict[x]:
+                tmp_users.append(k)
+
+            pearson_list = self.get_pearson_value_list(user,users = tmp_users)
+            for m in pearson_list:
+                pearson_total += m[1]
+
+            score = 0
+            for record in pearson_list:
+                score += (record[1]/pearson_total)*rec_dict[x][record[0]]
+                #            print score
+            rec_list.append((x,score))
+
+        rec_list.sort(key=lambda d:d[1],reverse=True)
+
         return rec_list
 
     def get_pearson_value_list(self,user,users = []):
@@ -60,7 +83,7 @@ class Recommendation(object):
             from common.pearson import get_pearson_value as get_value
             for x in users:
                 values.append((x,get_value(self.users[user],self.users[x])))
-#                print (x,get_value(self.users[user],self.users[x]))
+                #                print (x,get_value(self.users[user],self.users[x]))
             return values
 
     def cal_user_distance(self):
@@ -74,21 +97,25 @@ class Recommendation(object):
             else:
                 for left in users:
                     for right in users:
-#                        TODO
+                    #TODO
                         pass
         else: #E distance
             pass
 
-#TEST
-from data_format.input_format import user_install_record_to_dict
-user_dict = user_install_record_to_dict(file('../input/user_install_record.tmp'))
-rec = Recommendation(neighbor=3, user_rating = user_dict)
-#print "all-user"
-#print rec.get_all_users()
 
-print rec.get_nearest_neighbor(user='000000011234564')
-print rec.get_neighbor_recommendation_list(user='000000011234564',neighbors=rec.get_nearest_neighbor(user='000000011234564'))
-#print rec.get_pearson_value_list(user='000000011234564', users = rec.get_nearest_neighbor(user='000000011234564'))
+
+if __name__ == '__main__':
+    from data_format.input_format import user_install_record_to_dict
+    user_dict = user_install_record_to_dict(file('../input/user_usetimes_record.tmp'))
+    rec = Recommendation(neighbor=5, user_rating = user_dict)
+
+    #print "all-user"
+    #print rec.get_all_users()
+    #print rec.get_pearson_value_list(user='000000011234564', users = rec.get_nearest_neighbor(user='000000011234564'))
+    
+#    print rec.get_nearest_neighbor(user='000000011234564')
+    print rec.get_neighbor_recommendation_list(user='000000011234564',neighbors=rec.get_nearest_neighbor(user='000000011234564'))
+
 
 
 
