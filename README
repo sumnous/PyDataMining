@@ -3,21 +3,24 @@
 当前状态：
 完成简单推荐功能，使用马氏距离、Pearson相关系数
 
-
-
 Todo List
 
+优先：
+＋ 聚类
 ＋ add xml configuration file and related .py
-＋ 将peason相关系数应用于recommendation_list中
-＋ 增加保留权重
 ＋ 增加保存dict\list对象功能
-＋ 中间词典生成
+＋ 中间数据，词典
+
+其次：
+＋ 增加 reverse_权重
 ＋ 更新模块code
-＋ More
+
+
+最好完成：
+＋
+
 
 Note:
-
 ＋ 尽量用KV形式存储处理的数据
 
 https://twitter.com/nourlcn
-http://weibo.com/209018880
