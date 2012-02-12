@@ -1,0 +1,22 @@
+个人兴趣，欢迎加入！
+
+本项目尝试使用python进行数据挖掘，idea来源于实习
+
+
+Todo List
+
+＋ add xml configuration file and related .py
+＋ 将peason相关系数应用于recommendation_list中
+＋ 增加保留权重
+＋ 增加保存dict\list对象功能
+＋ 中间词典生成
+＋ 更新模块code
+等等
+
+Note:
+
+＋ 尽量用KV形式存储处理的数据
+＋
+
+https://twitter.com
+http://weibo.com/209018880
