@@ -106,7 +106,7 @@ class Recommendation(object):
 
 if __name__ == '__main__':
     from data_format.input_format import user_install_record_to_dict
-    user_dict = user_install_record_to_dict(file('../input/user_usetimes_record.tmp'))
+    user_dict = user_install_record_to_dict(file('../input/user_usetimes_record'))
     rec = Recommendation(neighbor=5, user_rating = user_dict)
 
     #print "all-user"
