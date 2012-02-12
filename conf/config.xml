@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>rec_list_prefer</name>
+        <value>Pearson</value>
+        <description>Prefer Neighbor count or High score. Value could be Nearest/Most/Highest/Pearson</description>
+    </property>
+
+    <property>
+        <name>reverse_count</name>
+        <value>0.0</value>
+        <description>How much pearson count value percent will be reversed</description>
+    </property>
+</configuration>
