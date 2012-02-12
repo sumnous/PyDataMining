@@ -6,6 +6,10 @@
 Todo List
 
 优先：
++ User_based filtering
++ Item_based filtering
++ 加入Slope One算法
+
 ＋ 聚类
 ＋ add xml configuration file and related .py
 ＋ 增加保存dict\list对象功能
