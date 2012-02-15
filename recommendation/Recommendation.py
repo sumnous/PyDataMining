@@ -10,13 +10,9 @@ class Recommendation(object):
         self.n = neighbor #num
         self.r = recommendation #num
 
-        #        -----Need move into config.xml-----
-        #
-        #-----Config-----
-        #need move into config.xml
+        # -----Need move into config.xml-----
         self.save_type = "Pickle"
-        #
-
+        # ----- -----
         self.cal_type = "manhattan"  # M/O
         self.pearson_type = "formula" #formula/normal/cosine
 

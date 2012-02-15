@@ -19,6 +19,6 @@ def user_install_record_to_dict(fobject,training=False):
 
 
 if __name__ == '__main__':
-    fobject = file('../input/user_install_record.tmp')
+    fobject = file('../input/user_install_record')
 
     print user_install_record_to_dict(fobject)

@@ -19,7 +19,6 @@ def get_manhattan_distance(rating_left, rating_right):
     else:
         return -1
 
-
 def get_euclidean_distance(rating_left, rating_right):
 #    TODO
     pass
