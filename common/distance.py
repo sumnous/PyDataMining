@@ -3,7 +3,6 @@
 
 from math import sqrt, pow
 
-
 def get_manhattan_distance(rating_left, rating_right):
     """
     tpye(rating) == dict
@@ -25,5 +24,43 @@ def get_euclidean_distance(rating_left, rating_right):
 #    TODO
     pass
 
-def ()
+def get_mean_value(input_list = []):
+    """suggest that input_list is not null"""
+    total = 0
+    for x in input_list:
+        total += float(x)
+    return total/len(input_list)
+
+def get_standard_deviation(input_list = []):
+    total = 0
+    num = len(input_list)
+    mean_value = 0
+    print num
+    result = -1
+    if num:
+        mean_value = get_mean_value(input_list)
+        print mean_value
+        sum_deviation2 = 0 #means sum((xi - mean_value)^2)
+        for x in input_list:
+            sum_deviation2 += pow((x-mean_value),2)
+        print sum_deviation2
+
+        result = sqrt(sum_deviation2/num)
+    return result
+
+def convert_values_normalization(input_list = []):
+    std_deviation = get_standard_deviation(input_list)
+
+    result = []
+    num = len(input_list)
+
+    if num:
+        mean_value = get_mean_value(input_list)
+        for x in input_list:
+          result.append(float(x - mean_value)/float(std_deviation))
+    return result
+
+#test
+#print get_standard_deviation(input_list=[1,2,4,5,8])
+#print convert_values_normalization(input_list=[1,2,4,5,8])
 
