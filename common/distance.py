@@ -25,3 +25,5 @@ def get_euclidean_distance(rating_left, rating_right):
 #    TODO
     pass
 
+def ()
+
