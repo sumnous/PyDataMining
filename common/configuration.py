@@ -4,4 +4,4 @@
 from xml.dom import minidom
 
 class Configuration(object):
-   pass
+    pass

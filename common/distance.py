@@ -1,14 +1,14 @@
 #!/usr/bin python
 # encoding: utf-8
 
-from math import sqrt,pow
+from math import sqrt, pow
 
 
-def get_manhattan_distance(rating_left,rating_right):
+def get_manhattan_distance(rating_left, rating_right):
     """
     tpye(rating) == dict
     """
-#    TODO
+    #    TODO
     count = 0
     total = 0
     for k in rating_left:
@@ -16,11 +16,12 @@ def get_manhattan_distance(rating_left,rating_right):
             count += 1
             total += abs(rating_left[k] - rating_right[k])
     if count != 0:
-        return total/count
+        return total / count
     else:
         return -1
 
-def get_euclidean_distance(rating_left,rating_right):
+
+def get_euclidean_distance(rating_left, rating_right):
 #    TODO
     pass
 

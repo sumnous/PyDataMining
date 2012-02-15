@@ -17,4 +17,10 @@
         <value>hot</value>
         <description>value may be: Hot/Fast/Editor/Scence/Normal</description>
     </property>
+
+    <property>
+        <name>save_type</name>
+        <value>Pickle</value>
+        <description>value may be:Pickle/Json</description>
+    </property>
 </configuration>

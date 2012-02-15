@@ -13,10 +13,10 @@ class Matrix(object):
             self.matrix.append(ea_row)
 
     def set_item(self, col, row, v):
-        self.matrix[col-1][row-1] = v
+        self.matrix[col - 1][row - 1] = v
 
     def get_item(self, col, row):
-        return self.matrix[col-1][row-1]
+        return self.matrix[col - 1][row - 1]
 
     def __repr__(self):
         out_str = ""
