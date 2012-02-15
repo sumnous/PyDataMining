@@ -5,3 +5,4 @@ from xml.dom import minidom
 
 class Configuration(object):
     def __init__(self):
+        pass
