@@ -1,0 +1,9 @@
+All need inter Data:
+
++ userid --> nearest neighbor   List
++ userid --> pearson value based on nearest List
+
++ item --> attribute_value  List *need normal_value
++ user_circle Dict based on some attribution
++ item_circle Dict based on some attribution
+

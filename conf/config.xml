@@ -11,4 +11,10 @@
         <value>0.0</value>
         <description>How much pearson count value percent will be reversed</description>
     </property>
+
+    <property>
+        <name>recommend_type</name>
+        <value>hot</value>
+        <description>value may be: Hot/Fast/Editor/Scence/Normal</description>
+    </property>
 </configuration>

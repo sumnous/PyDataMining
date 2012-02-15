@@ -6,6 +6,7 @@
 Todo List
 
 优先：
++ Divide into Training part and Run Part
 + 加入Movielens数据集 http://www.grouplens.org/node/73
 + 数据标准化 (value-mean_value)/normal_deviation = normal_value
 + Classification
