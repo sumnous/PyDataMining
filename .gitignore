@@ -1,0 +1,9 @@
+*.svn*
+tmp*
+*tmp
+*.pyc
+input/*
+output/*
+*.eclipse
+.idea*
+
