@@ -10,7 +10,14 @@ from math import sqrt, pow
 class UserBasedRecommendation(Recommendation):
 #    def __init__(self, neighbor=3, recommendation=3, training=False):
 
-    def get_nearest_neighbor(self, user, training=False):
+    def get_relative_neighbor(self, search_deep=1):
+        pass
+#        TODO
+#        add method to find neighbor and may be relative user via neighbor.
+    
+    def get_nearest_neighbor(self, user, training=False, active_user_filter=False):
+#        TODO
+# add active_neighbor option. could return nearest neighbors and all of them are in active users set.
         """return user list"""
         users = self.user_rating
         distance = []
@@ -84,21 +91,21 @@ class UserBasedRecommendation(Recommendation):
                 pickle.dump(values, f)
         return values
 
-    def cal_user_distance(self):
-        """return Martrix"""
-        users = self.users
-        values = Martrix(0, 0)
-
-        if self.cal_type == "manhattan":
-            if len(users) < 2:
-                return values
-            else:
-                for left in users:
-                    for right in users:
-                    #TODO
-                        pass
-        else: #E distance
-            pass
+#    def cal_user_distance(self):
+#        """return Martrix"""
+#        users = self.users
+#        values = Martrix(0, 0)
+#
+#        if self.cal_type == "manhattan":
+#            if len(users) < 2:
+#                return values
+#            else:
+#                for left in users:
+#                    for right in users:
+#                    #TODO
+#                        pass
+#        else: #E distance
+#            pass
 
 
 if __name__ == '__main__':

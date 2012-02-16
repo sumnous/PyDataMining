@@ -36,12 +36,13 @@ class Recommendation(object):
         return  result
 
     def get_all_users(self):
-        users = set([x for x in self.user_rating])
+        users = set(self.user_rating.iterkeys())
         return list(users)
 
     def get_all_items(self):
 #        TODO
         return []
+
 
 if __name__ == '__main__':
     pass
