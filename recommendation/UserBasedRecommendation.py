@@ -118,18 +118,20 @@ if __name__ == '__main__':
     user_dict = user_install_record_to_dict(file('../input/ml-100k/u.data'), training=flag)
     #    print user_dict
     rec = UserBasedRecommendation(neighbor=5, user_rating_dict=user_dict, training=flag)
-    print rec.get_all_users()
-    print rec.get_active_users()
+#    print rec.get_all_users()
+#    print rec.get_active_users()
 
-    #    one_user = rec.get_all_users()[0]
-
-    for one_user in rec.get_all_users()[1:1]:
-    #    print user_dict['216']
-        nearest_neighbor = rec.get_nearest_neighbor(user=one_user, training=flag)
-        pearson_value_list = rec.get_pearson_value_list(user=one_user, users=nearest_neighbor, training=flag)
+#    one_user = rec.get_all_users()[0]
+    one_user = '1'
+#    for one_user in rec.get_all_users()[1:1]:
+#    print user_dict['216']
+#    nearest_neighbor = rec.get_nearest_neighbor(user=one_user, training=flag)
+    nearest_neighbor = rec.get_active_users()
+    pearson_value_list = rec.get_pearson_value_list(user=one_user, users=nearest_neighbor, training=flag)
 #        print pearson_value_list
 #        print rec.get_nearest_neighbor(user=one_user)
-        print rec.get_neighbor_recommendation_list(user=one_user, neighbors = nearest_neighbor)
+    for x in rec.get_neighbor_recommendation_list(user=one_user, neighbors = nearest_neighbor)[:20]:
+        print x
 
 
 
