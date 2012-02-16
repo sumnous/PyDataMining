@@ -4,17 +4,16 @@
 from common import Martrix
 from common.distance import get_manhattan_distance
 from math import sqrt,pow
+from conf import conf
 
 class Recommendation(object):
     def __init__(self,neighbor = 3,recommendation = 3, user_rating_dict={}, training=False):
         self.n = neighbor #num
         self.r = recommendation #num
 
-        # -----Need move into config.xml-----
-        self.save_type = "Pickle"
-        # ----- -----
-        self.cal_type = "manhattan"  # M/O
-        self.pearson_type = "formula" #formula/normal/cosine
+        self.save_type = conf.save_type
+        self.cal_type = conf.cal_distance_type
+        self.pearson_type = conf.pearson_cal_type
 
         if not training:
             if self.save_type == "Pickle":
@@ -26,6 +25,15 @@ class Recommendation(object):
 
     def load_configuration(self,fobject=None):
         """load configuration XML file"""
+
+    def get_active_users(self):
+        result = []
+        # if number of items from one user > 3, consider as active user
+        all_users = self.get_all_users()
+        for x in all_users:
+            if len(self.user_rating[x]) > conf.active_count:
+                result.append(x)
+        return  result
 
     def get_all_users(self):
         users = set([x for x in self.user_rating])
