@@ -28,6 +28,7 @@ Todo List
 
 
 Note:
-＋ 尽量用KV形式存储处理的数据
++ 尽量用KV形式存储处理的数据
++ 增加对Hadoop的支持
 
 https://twitter.com/nourlcn
