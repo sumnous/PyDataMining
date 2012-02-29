@@ -127,7 +127,8 @@ if __name__ == '__main__':
 #    print user_dict['216']
 #    nearest_neighbor = rec.get_nearest_neighbor(user=one_user, training=flag)
     nearest_neighbor = rec.get_active_users()
-    pearson_value_list = rec.get_pearson_value_list(user=one_user, users=nearest_neighbor, training=flag)
+#    print rec.get_all_items(user='124')
+#    pearson_value_list = rec.get_pearson_value_list(user=one_user, users=nearest_neighbor, training=flag)
 #        print pearson_value_list
 #        print rec.get_nearest_neighbor(user=one_user)
     for x in rec.get_neighbor_recommendation_list(user=one_user, neighbors = nearest_neighbor)[:20]:
