@@ -21,7 +21,19 @@ def get_manhattan_distance(rating_left, rating_right):
 
 def get_euclidean_distance(rating_left, rating_right):
 #    TODO
-    pass
+    distance = 0
+    count = 0
+    commonRatings = False
+    for key in rating_left:
+        if key in rating_right:
+            count += 1
+            distance += pow(abs(rating_left[key] - rating_right[key]), 2)
+            commonRatings = True
+    if commonRatings:
+        return math.sqrt(distance / count)
+    else:
+        return -1 #Indicates no ratings in common
+#    pass
 
 def get_mean_value(input_list = []):
     """suggest that input_list is not null"""

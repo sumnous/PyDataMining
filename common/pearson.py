@@ -36,4 +36,18 @@ def get_pearson_value(rating_left, rating_right):
 
 def get_cosine_formula(rating_left, rating_right):
 #    TODO
-    pass
+#    pass
+    sum_x2 = 0
+    sum_y2 = 0
+    count = 0
+    for key in rating_left:
+        if key in rating_right:
+            count += 1
+            x = rating_left[key]
+            y = rating_right[key]
+            sum_x2 += pow(x, 2)
+            sum_y2 += pow(y, 2)
+    if count == 0:
+        return 0
+    else:
+        return x * y / (sqrt(sum_x2) * sqrt(sum_y2))
